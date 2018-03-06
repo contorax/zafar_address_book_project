@@ -4,15 +4,15 @@ public class Point {
 
   public static void main(String[] args) {
 
-
-    double  p1 = 8;
-    double p2 = 2;
-    System.out.println(" расстояния между точками " + p1+ " и " +  p2+ " = " + distance( p1,  p2));
+    Distance d = new Distance ();
+    d.p1 = 8;
+    d.p2 = 2;
+    System.out.println(" расстояния между точками " + d.p1+ " и " +  d.p2+ " = " + distance(d));
 
   }
 
-  public static double distance( double p1, double p2) {
-    return  p1 -  p2;
+  public static double distance( Distance d) {
+    return  d.p1 -  d.p2;
   }
 
 
