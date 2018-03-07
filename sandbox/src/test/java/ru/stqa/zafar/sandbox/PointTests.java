@@ -1,5 +1,6 @@
 package ru.stqa.zafar.sandbox;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PointTests {
@@ -9,7 +10,7 @@ public class PointTests {
     Distance d = new Distance ();
     d.p1 = 8;
     d.p2 = 2;
-    assert d.distance()== 5;
+  Assert.assertEquals(d.distance(), 5);
   }
 }
 
