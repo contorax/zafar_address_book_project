@@ -15,4 +15,4 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 .idea/workspace.xml
 sandbox/out/production/classes/MyFirstProgram1.class
-sandbox/src/test/java/ru/stqa/zafar/sandbox/PointTests.java
+
