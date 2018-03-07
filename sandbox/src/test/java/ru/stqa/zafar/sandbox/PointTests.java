@@ -9,7 +9,7 @@ public class PointTests {
     Distance d = new Distance ();
     d.p1 = 8;
     d.p2 = 2;
-    assert d.distance()== 6;
+    assert d.distance()== 5;
   }
 }
 
