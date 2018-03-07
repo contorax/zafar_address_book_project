@@ -7,13 +7,10 @@ public class Point {
     Distance d = new Distance ();
     d.p1 = 8;
     d.p2 = 2;
-    System.out.println(" расстояния между точками " + d.p1+ " и " +  d.p2+ " = " + distance(d));
+    System.out.println(" расстояния между точками " + d.p1+ " и " +  d.p2+ " = " + d.distance());
 
   }
 
-  public static double distance( Distance d) {
-    return  d.p1 -  d.p2;
-  }
 
 
 
