@@ -10,7 +10,7 @@ public class PointTests {
     Distance d = new Distance ();
     d.p1 = 8;
     d.p2 = 2;
-  Assert.assertEquals(d.distance(), 5);
+  Assert.assertEquals(d.distance(), 6);
   }
 }
 
