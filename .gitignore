@@ -16,3 +16,5 @@ gradle-app.setting
 .idea/workspace.xml
 sandbox/out/production/classes/MyFirstProgram1.class
 
+sandbox/src/main/java/ru/stqa/zafar/sandbox/MyFirstProgram.java
+sandbox/src/main/java/ru/stqa/zafar/sandbox/MyFirstProgram.java

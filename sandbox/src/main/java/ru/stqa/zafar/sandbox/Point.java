@@ -4,15 +4,27 @@ public class Point {
 
   public static void main(String[] args) {
 
-    Distance d = new Distance ();
-    d.p1 = 8;
-    d.p2 = 2;
-    System.out.println(" расстояния между точками " + d.p1+ " и " +  d.p2+ " = " + d.distance());
 
+    double x1 = 2;
+    double y1 = 8;
+    double x2 = 0;
+    double y2 = 0;
+    double p1 = (x2 - y1) * (x2 - x1);
+    double p2 = (y2 - y1) * (y2 - y1);
+
+    System.out.println(" расстояния между точками " + p1 + " и " + p2 + " = " + distance(p1, p2));
+  }
+  public static double distance(double p1, double p2) {
+
+    double distance = Math.sqrt(p1 + p2);
+    return distance;
   }
 
 
-
-
-
 }
+
+
+
+
+
+
