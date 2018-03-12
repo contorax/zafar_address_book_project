@@ -9,7 +9,7 @@ public class MyFirstProgram {
     double l = 8.0;
     double s = l * l;
 
-    Distance d = new Distance (0, 0, 2, 0, 8, 0);
+    Distance d = new Distance (2, 0, 2, 0, 8, 0);
 
     d.p1 = (d.x2 - d.y1) * (d.x2 - d.x1);
     d.p2 = (d.y2 - d.y1) * (d.y2 - d.y1);

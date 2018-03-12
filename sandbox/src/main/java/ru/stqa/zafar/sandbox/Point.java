@@ -12,13 +12,11 @@ public class Point {
     double p1 = (x2 - y1) * (x2 - x1);
     double p2 = (y2 - y1) * (y2 - y1);
 
-    System.out.println(" расстояния между точками " + p1 + " и " + p2 + " = " + distance(p1, p2));
-  }
-  public static double distance(double p1, double p2) {
+    Distance d = new Distance (2, 0, 2, 0, 8, 0);
 
-      return Math.sqrt(p1 + p2);
-
+    System.out.println(" расстояния между точками " + p1 + " и " + p2 + " = " + d.distance());
   }
+
 
 
 }
