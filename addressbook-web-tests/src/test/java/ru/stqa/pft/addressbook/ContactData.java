@@ -6,11 +6,11 @@ public class ContactData {
   private final String mobileNumber;
   private final String emailAddress;
 
-  public ContactData(String FirstName, String LastName, String MobileNumber, String EmailAddress) {
-    firstName = FirstName;
-    lastName = LastName;
-    mobileNumber = MobileNumber;
-    emailAddress = EmailAddress;
+  public ContactData(String firstName, String lastName, String mobileNumber, String emailAddress) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.mobileNumber = mobileNumber;
+    this.emailAddress = emailAddress;
   }
 
   public String getFirstName() {
