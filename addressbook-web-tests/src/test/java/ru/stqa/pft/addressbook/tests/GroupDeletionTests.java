@@ -9,9 +9,7 @@ public class GroupDeletionTests extends TestBase {
     @Test
     public void testGroupDeletion() {
         app.gotoGroupPage();
-        if (!app.wd.findElement(By.name("selected[]")).isSelected()) {
-            app.selectGroup();
-        }
+        app.selectGroup();
         app.deleteSelectedGroups();
         app.returnToGroupPage();
     }
