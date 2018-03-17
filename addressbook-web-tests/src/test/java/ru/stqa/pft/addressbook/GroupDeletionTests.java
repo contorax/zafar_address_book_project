@@ -8,12 +8,12 @@ public class GroupDeletionTests extends TestBase {
 
     @Test
     public void testGroupDeletion() {
-        gotoGroupPage();
-        if (!wd.findElement(By.name("selected[]")).isSelected()) {
-            selectGroup();
+        app.gotoGroupPage();
+        if (!app.wd.findElement(By.name("selected[]")).isSelected()) {
+            app.selectGroup();
         }
-        deleteSelectedGroups();
-        returnToGroupPage();
+        app.deleteSelectedGroups();
+        app.returnToGroupPage();
     }
 
 }
