@@ -2,28 +2,28 @@ package ru.stqa.zafar.sandbox;
 
 public class Distance {
 
-  public double x1;
-  public double y1;
-  public double x2;
-  public double y2;
-  public double p1;
-  public double p2;
 
-public Distance (double p1, double p2, double x1, double x2, double y1, double y2){
+  public static void main(String[] args) {
+    Point p1 = new Point();
+    Point p2 = new Point();
+    p1.x = 0;
+    p1.y = 3;
+    p2.x = 8;
+    p2.y = 9;
 
-  this.x1 = x1;
-  this.x2 = x2;
-  this.y1 = y1;
-  this.y2 = y2;
-  this.p1 = (x2 - y1) * (x2 - x1);
-  this.p2 = (y2 - y1) * (y2 - y1);
-}
 
-  public double distance() {
+    System.out.println( "Точка p1: x = " + p1.x + ", y = " + p1.y );
+    System.out.println( "Точка p2: x = " + p2.x + ", y = " + p2.y );
+    System.out.println( "Расстояние между точками p1 и p2 = " + distance( p1, p2 ) );
 
-    return Math.sqrt(this.p1 + this.p2);
+  }
 
+  public static double distance(Point p1, Point p2) {
+    double distance = Math.sqrt( (Math.pow( (p2.x - p1.x), 2 ) + Math.pow( (p2.y - p1.y), 2 )) );
+    return distance;
   }
 
 
 }
+
+
