@@ -4,8 +4,8 @@ public class Distance {
 
 
   public static void main(String[] args) {
-    Point p1 = new Point();
-    Point p2 = new Point();
+    Point p1 = new Point(0,3);
+    Point p2 = new Point(8,9);
     p1.x = 0;
     p1.y = 3;
     p2.x = 8;
