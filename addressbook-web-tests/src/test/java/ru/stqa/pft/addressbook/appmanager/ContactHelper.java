@@ -35,6 +35,9 @@ public class ContactHelper extends HelperBase{
     clickcontact( By.xpath( "//div[@id='content']/form[2]/div[2]/input" ) );
   }
 
+  public void closeAlertWindow (){
+  wd.switchTo().alert().accept();}
+
   public void selectContact() {
     clickcontact( By.name( "selected[]" ) );
   }
