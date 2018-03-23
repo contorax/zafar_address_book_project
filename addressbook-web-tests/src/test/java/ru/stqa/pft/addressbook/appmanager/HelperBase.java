@@ -31,4 +31,13 @@ public class HelperBase {
   }
 
 
+  protected void clickcontact(By locator) {
+    wd.findElement( locator ).click();
+  }
+
+  protected void typecontact(By locator, String text) {
+    clickcontact( locator );
+    wd.findElement(locator).clear();
+    wd.findElement(locator).sendKeys( text );
+  }
 }

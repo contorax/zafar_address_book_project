@@ -1,17 +1,18 @@
 package ru.stqa.pft.addressbook;
 
 import org.testng.annotations.Test;
+import ru.stqa.pft.addressbook.model.ContactData;
 
 public class ContactCreationTests extends TestBaseContacts {
 
     @Test
     public void testContactCreation() {
 
-        gotoHomePage();
-        initContactCreation();
-        fillContactForm( new ContactData( "Ivan", "Pavlov", "224555000", "justdoit@mail.ru" ) );
-        submitContactCreation();
-        returnToHomePage();
+        app.getContactHelper().gotoHomePage();
+        app.getContactHelper().initContactCreation();
+        app.getContactHelper().fillContactForm( new ContactData( "Ivan", "Pavlov", "224555000", "justdoit@mail.ru" ) );
+        app.getContactHelper().submitContactCreation();
+        app.getContactHelper().returnToHomePage();
     }
 
 }
