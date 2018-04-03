@@ -43,8 +43,9 @@ public class GroupHelper extends HelperBase {
   }
 
   public boolean isThereAGroup() {
-return isElementPresent( By.name( "Select (test1)" ) ) ;
+return isElementPresent( By.cssSelector(" span.group" ) ) ;
   }
+
 
   public int getGroupCount() {
     return wd.findElements(  By.name( "selected[]" ) ).size();
