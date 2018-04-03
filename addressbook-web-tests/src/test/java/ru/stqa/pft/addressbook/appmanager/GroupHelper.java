@@ -43,7 +43,7 @@ public class GroupHelper extends HelperBase {
   }
 
   public boolean isThereAGroup() {
-return isElementPresent( By.name( "selected[]" ) ) ;
+return isElementPresent( By.name( "Select (test1)" ) ) ;
   }
 
   public int getGroupCount() {
