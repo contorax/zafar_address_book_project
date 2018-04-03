@@ -20,9 +20,9 @@ public class ContactModificationTests extends TestBase {
       app.getContactHelper().createContact( new ContactData( "Maria", "Davis", null, null, "test1" ), true );
     }
     int before = app.getContactHelper().getContactCount();
-    app.getContactHelper().selectContact();
+    app.getContactHelper().selectContact(0 );
     app.getContactHelper().initContactModification();
-    app.getContactHelper().fillContactForm( new ContactData( "Adam", "Smith", "7654321", "justtest@mail.ru", null ), false );
+    app.getContactHelper().fillContactForm( new ContactData( "Walt", "White", "+1654321", "justtest@mail.ru", null ), false );
     app.getContactHelper().submitContactModification();
     app.getContactHelper().returnToHomePage();
     int after = app.getContactHelper().getContactCount();

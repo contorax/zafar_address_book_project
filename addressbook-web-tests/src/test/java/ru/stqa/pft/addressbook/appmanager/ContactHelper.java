@@ -42,9 +42,9 @@ public class ContactHelper extends HelperBase{
   public void closeAlertWindow (){
   wd.switchTo().alert().accept();}
 
-  public void selectContact() {
-    clickcontact( By.name( "selected[]" ) );
-  }
+  public void selectContact(int index) {
+    wd.findElements ( By.name( "selected[]" ) ).get (index).click();
+    }
 
   public void initContactModification() {
     clickcontact( By.xpath (" //table[@id='maintable']/tbody/tr[2]/td[8]/a/img "));
