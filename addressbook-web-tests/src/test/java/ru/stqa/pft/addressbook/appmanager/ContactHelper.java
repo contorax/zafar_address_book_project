@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import com.sun.org.apache.xpath.internal.operations.String;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -77,12 +78,20 @@ public class ContactHelper extends HelperBase{
 
   public List<ContactData> getContactList() {
   List<ContactData> contacts = new ArrayList <ContactData>(  );
-  List<WebElement> elements = wd.findElements( By.cssSelector( "#maintable>tbody>tr" ) );
+
+  // Получаем список всех строк таблицы контактов  (это элементы с именем entry)
+  List<WebElement> elements = wd.findElements( By.name( "entry" ) );
+  // проходим по всем строкам в цикле
   for (WebElement element : elements){
-    String name = element.getText();
+    // Пробегаемся по каждой строке, и с помощью element.findElements получаем список ячеек (это элементы с тегом td)
+    List<WebElement> cells = element.findElements(By.tagName("td"));
+
+    // Берём текст из ячеек с нужным нам индексом
+    java.lang.String name = cells.get(3).getText();
     ContactData contact = new ContactData( name, null, null, null, null );
-  contacts.add (contact);
+     contacts.add( contact );
   }
   return contacts;
   }
 }
+
