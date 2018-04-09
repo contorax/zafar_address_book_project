@@ -52,12 +52,14 @@ public class ContactHelper extends HelperBase{
     wd.findElements ( By.name( "selected[]" ) ).get (index).click();
     }
 
-  public void initContactModification() {
+
+    public void initContactModification() {
     clickcontact( By.xpath (" //tr[@class='odd']/td[8]/a/img "));
      }
   public void submitContactModification() {
     clickcontact( By.xpath (" //div[@id='content']/form[1]/input[22] "));
   }
+
 
   public void createContact(ContactData contact, boolean b) {
     initContactCreation();
