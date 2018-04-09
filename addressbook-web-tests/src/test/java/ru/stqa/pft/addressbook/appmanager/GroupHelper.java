@@ -58,13 +58,22 @@ return isElementPresent( By.cssSelector(" span.group" ) ) ;
   }
 
   public List<GroupData> getGroupList() {
+    // создаем список который будем заполнять
     List<GroupData> groups = new ArrayList <GroupData>(  );
+    // чтобы заполнить этот список какими-то объектами, данные для создания этих объектов будут извлекаться  со страницы веб приложения
+    // и таким образом получаем список объектов типа WebElement
     List<WebElement> elements = wd.findElements( By.cssSelector( "span.group" ) );
+    // и теперь нужно по этим элементами пройти в цикле, и по каждому из нихвыполнить какие-то действия
+    // переменная element пробегает по списку elements
     for (WebElement element: elements){
+      // из каждого такого element  мы получаем Text - это будет имя группы
       String name = element.getText();
+      // создаем объект типа GroupData
       GroupData group = new GroupData( name, null, null );
-    groups.add (group);
+    // добавляем в созданный объект список
+      groups.add (group);
     }
+    // в конце этот список должен возвращаться
     return groups;
   }
 }

@@ -13,6 +13,7 @@ public class GroupCreationTests extends TestBase{
     public void testGroupCreation() {
 
         app.getNavigationHelper().gotoGroupPage();
+       // тут сравниваем размеры списков, которые получены с при помощи getGroupList (а следующем модуле будет сравнение списков целиком)
         List<GroupData> before = app.getGroupHelper().getGroupList();
         app.getGroupHelper().createGroup( new GroupData("test1", null, null) );
         List<GroupData> after = app.getGroupHelper().getGroupList();

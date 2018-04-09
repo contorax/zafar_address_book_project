@@ -15,6 +15,8 @@ public class GroupDeletionTests extends TestBase {
                 if (! app.getGroupHelper().isThereAGroup ()){
             app.getGroupHelper().createGroup (new GroupData("test1", null, null));
         }
+
+        // метод возвращающий список групп и тут  сравниваем размеры списков
       List<GroupData> before = app.getGroupHelper().getGroupList();
         app.getGroupHelper().selectGroup(before.size() -1);
         app.getGroupHelper().deleteSelectedGroups();
