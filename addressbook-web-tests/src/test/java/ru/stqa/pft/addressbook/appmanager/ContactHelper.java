@@ -89,8 +89,11 @@ public class ContactHelper extends HelperBase{
 
     // Берём текст из ячеек с нужным нам индексом
     java.lang.String name = cells.get(3).getText();
-    ContactData contact = new ContactData( name, null, null, null, null );
-     contacts.add( contact );
+    java.lang.String lastname = cells.get(2).getText();
+    // создаем обект ContactGroupData и заполняем его значениями
+    ContactData contact = new ContactData( name, lastname, null, null, null );
+    // добавляем созданный объект в список
+    contacts.add( contact );
   }
   return contacts;
   }
