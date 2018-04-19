@@ -23,6 +23,16 @@ public class GroupDeletionTests extends TestBase {
         app.getGroupHelper().returnToGroupPage();
       List<GroupData> after = app.getGroupHelper().getGroupList();
       Assert.assertEquals(after.size(), before.size()-1 );
+
+      // 4.6 Сравнение списков целиком, чтобы проверить что удалилась нужная группа
+      // проверяется даже то, что другие группы не удалились и сохранили свои старые имена
+
+      // перед тем как сравнивать сами списки, надо лишний элемент удалить, который мы удаляли в тестируемом приложении
+      before.remove( before.size() -1 );
+      // то есть получается два одинаковых списка, переменная before ссылается на список в котором удален не нужный элемент
+    // и старый список должен содержать теже элементы,что и новый
+
+    Assert.assertEquals (before, after);
     }
 
 }
