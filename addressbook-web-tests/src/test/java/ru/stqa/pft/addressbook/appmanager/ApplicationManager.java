@@ -23,17 +23,17 @@ public class ApplicationManager {
   }
 
   public void init() {
-      if (browser.equals( BrowserType.FIREFOX )){
+    if (browser.equals( BrowserType.FIREFOX )) {
       wd = new FirefoxDriver( new FirefoxOptions().setLegacy( true ).setBinary( "C:/Program Files/Mozilla Firefox/firefox.exe" ) );
-    } else if (browser.equals( BrowserType.CHROME )){
-      wd = new ChromeDriver( );
-    }else if (browser.equals( BrowserType.IE )) {
+    } else if (browser.equals( BrowserType.CHROME )) {
+      wd = new ChromeDriver();
+    } else if (browser.equals( BrowserType.IE )) {
       wd = new InternetExplorerDriver();
     }
 
     wd.manage().timeouts().implicitlyWait( 5, TimeUnit.SECONDS );
     wd.get( "http://localhost/addressbook/" );
-    contactHelper = new ContactHelper(wd);
+    contactHelper = new ContactHelper( wd );
     groupHelper = new GroupHelper( wd );
     navigationHelper = new NavigationHelper( wd );
     sessionHelper = new SessionHelper( wd );
