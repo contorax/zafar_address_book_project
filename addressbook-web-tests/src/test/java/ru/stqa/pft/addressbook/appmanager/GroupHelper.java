@@ -76,7 +76,8 @@ public class GroupHelper extends HelperBase {
     for (WebElement element : elements) {
       // из каждого такого element  мы получаем Text - это будет имя группы
       String name = element.getText();
-      String id = element.findElement( By.tagName( "input" ) ).getAttribute( "value" ); // ищем один элемент вниутри другого = это и есть идентификатор который мы искали
+      // 4.8 исправляем место где вычисдяется этот идентификатор, он должен быть не строкой, а числом - String на int и  Integer.parseInt
+      int id = Integer.parseInt( element.findElement( By.tagName( "input" ) ).getAttribute( "value" )); // ищем один элемент вниутри другого = это и есть идентификатор который мы искали
       // создаем объект типа GroupData
       GroupData group = new GroupData( id, name, null, null );
       // добавляем в созданный объект список
