@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
@@ -21,19 +22,17 @@ public class GroupCreationTests extends TestBase {
     List <GroupData> after = app.getGroupHelper().getGroupList();
     Assert.assertEquals( after.size(), before.size() + 1 );
 
+    // максимальный индетификатор вычислять не будем group.setId( after.stream().max( (o1, o2) -> Integer.compare( o1.getId(), o2.getId() ) ).get().getId() );
 
-    // Лекция 4.9. Список можно превратить в поток.  у этого поток есть метод мах для вычисл макс элемента
-    // переменую нужно инитилизировать - присвоить ей значение
-// Comparator это интерфейс который не имеет реализации, он только декларирует-объявляет какие методы должжны быть, но реализацией этих методов не содержит
+    // чтобы добиться чтобы новая группа оказалась в конце - делаем изменение в ID в GroupData
+     before.add( group );
 
-    // 4.9. локальную переменную удаляем  int max1 = after.stream().max( (o1, o2) -> Integer.compare(o1.getId(), o2.getId()  ) ).get().getId();
-
-    group.setId( after.stream().max( (o1, o2) -> Integer.compare( o1.getId(), o2.getId() ) ).get().getId() );
-    before.add( group );
-    // (4.8) среди всех элементов входящих в новый списко нужно найти тот который имеет максимальный идентификатор
-
-    // (4.8) чтобы сравнить два списка before & after без учета порядка, надо 2 списка преоброзовать в множество (HashSet<Object>) и сравнивать их в таком виде
-    Assert.assertEquals( new HashSet <Object>( before ), new HashSet <Object>( after ) );
+    //4.10
+    Comparator<? super GroupData> byId = (g1, g2) -> Integer.compare( g1.getId(), g2.getId() );
+    //4.10 сортируем старый список и новый список
+    before.sort( byId );
+    after.sort( byId );
+    Assert.assertEquals(  before ,  after  );
   }
 
 }
