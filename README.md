@@ -1,1 +1,1 @@
-# zafar_first_project
+# java_project
